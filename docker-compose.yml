@@ -1,0 +1,15 @@
+services:
+  app:
+    image: deiiulpgc/deii-frontend:base
+    container_name: front_container
+    ports:
+      - 3000:3000
+    working_dir: /frontend
+    volumes:
+      - ./pages:/frontend/pages
+      - ./styles:/frontend/styles
+      - ./public:/frontend/public
+
+    environment:
+      - SERVER_PORT=8080
+    

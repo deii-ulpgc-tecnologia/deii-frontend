@@ -29,7 +29,7 @@ interface props {
 }
 
 export default function HeaderLink({ title, children, popoverWidth = 350, cols = 1, path = '/home'}: props) {
-	const pathname = usePathname()
+	const pathname = usePathname() ?? ""
 	const active = pathname.startsWith(path)
 	const textColor = active ? "primary.500" : "gray.600"
 	const router = useRouter()

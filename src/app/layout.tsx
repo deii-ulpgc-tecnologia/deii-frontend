@@ -1,3 +1,5 @@
+import { ChakraProvider } from "@chakra-ui/react"
+import { ThemeProvider } from "@components/providers/ThemeProvider"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
@@ -11,7 +13,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body style={{ backgroundColor: "#f5f5f5" }}>
+				<ThemeProvider>{children}</ThemeProvider>
+			</body>
 		</html>
 	)
 }

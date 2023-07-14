@@ -1,3 +1,6 @@
+import { Container } from "@chakra-ui/react"
+import BaseContainer from "@components/containers/BaseContainer"
+import { Footer, Header } from "@components/navigation"
 import React from "react"
 
 interface props {
@@ -6,10 +9,12 @@ interface props {
 
 export default function layout({ children }: props) {
 	return (
-		<div>
-			<div>header</div>
-			<div>{children}</div>
-			<div>footer</div>
-		</div>
+		<>
+			<Header></Header>
+			<BaseContainer>
+				<div>{children}</div>
+			</BaseContainer>
+			<Footer></Footer>
+		</>
 	)
 }

@@ -8,5 +8,5 @@ interface props {
 }
 
 export default function BaseContainer({ children }: props) {
-	return <Container maxW='container.lg'>{children}</Container>
+	return <Container py='20' maxW='container.lg'>{children}</Container>
 }

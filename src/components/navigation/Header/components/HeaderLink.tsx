@@ -16,27 +16,28 @@ import {
 	SimpleGrid,
 	Text,
 } from "@chakra-ui/react"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import React from "react"
 import { IoChevronDown } from "react-icons/io5"
 
 interface props {
 	title: string
-	active?: any
 	children?: React.ReactNode
 	popoverWidth?: number,
 	cols?: number
 	path?: string;
 }
 
-export default function HeaderLink({ title, active, children, popoverWidth = 350, cols = 1, path = '/home'}: props) {
+export default function HeaderLink({ title, children, popoverWidth = 350, cols = 1, path = '/home'}: props) {
+	const pathname = usePathname()
+	const active = pathname.startsWith(path)
 	const textColor = active ? "primary.500" : "gray.600"
 	const router = useRouter()
 
 	return (
-		<Popover placement="bottom-start">
+		<Popover placement="bottom-start" isLazy={false} trigger='hover' openDelay={0}>
 			<PopoverTrigger>
-				<Box display="flex" alignItems="center" gap="1" cursor="pointer" userSelect='none' onClick={() => !children && router.push(path)}>
+				<Box display="flex" alignItems="center" gap="1" cursor="pointer" userSelect='none' onClick={() => !children && router.replace(path)}>
 					<Text color={textColor} fontWeight="bold">
 						{title}
 					</Text>

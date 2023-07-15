@@ -2,7 +2,7 @@ import { SimpleGrid } from '@chakra-ui/layout';
 import NewCard from './index';
 
 export default {
-  component: (props : any) => <SimpleGrid  gap={4} columns={props.columns}>{(new Array(props.columns).fill(0)).map(() => <NewCard {...props}></NewCard>)}</SimpleGrid>,
+  component: (props : any) => <SimpleGrid  gap={4} columns={props.columns}>{(new Array(props.columns).fill(0)).map((i) => <NewCard key={i} {...props}></NewCard>)}</SimpleGrid>,
   title: 'Webpage/News/NewCard',
   tags: ['autodocs'],
   argTypes: {

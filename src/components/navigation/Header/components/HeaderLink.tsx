@@ -16,6 +16,7 @@ import {
 	SimpleGrid,
 	Text,
 } from "@chakra-ui/react"
+import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import React from "react"
 import { IoChevronDown } from "react-icons/io5"
@@ -37,7 +38,7 @@ export default function HeaderLink({ title, children, popoverWidth = 350, cols =
 	return (
 		<Popover placement="bottom-start" isLazy={false} trigger='hover' openDelay={0}>
 			<PopoverTrigger>
-				<Box display="flex" alignItems="center" gap="1" cursor="pointer" userSelect='none' onClick={() => !children && router.replace(path)}>
+				<Box as={Link} replace href={path} display="flex" alignItems="center" gap="1" cursor="pointer" userSelect='none'>
 					<Text color={textColor} fontWeight="bold">
 						{title}
 					</Text>

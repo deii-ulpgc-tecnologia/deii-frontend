@@ -1,16 +1,18 @@
 "use client"
 
-import { Box, Button, SimpleGrid } from "@chakra-ui/react"
+import { Box, Button, SimpleGrid,  } from "@chakra-ui/react"
 import React from "react"
 import HeaderLink from "./components/HeaderLink"
 import HeaderLinkOption from "./components/HeaderLinkOption"
 import { IoPeople, IoGitBranch, IoEarth, IoCashOutline, IoReceiptSharp, IoCalendar, IoRibbonSharp, IoSchool } from "react-icons/io5"
 import { MdSwitchAccount } from "react-icons/md"
+import Image from 'next/image'
+import logo from '@assets/logo.png'
 
 export default function Header() {
 	return (
 		<Box shadow='lg-soft' w="100%" bgColor="white" position="sticky" px="5" py="5" display="flex" justifyContent="space-between" alignItems="center">
-			<Box>Logo</Box>
+			<Box><Image width={110} alt='pepe' src={logo}></Image></Box>
 			<Box display="flex" gap="16">
 				<HeaderLink title="Delegacion" path='/home'>
 					<HeaderLinkOption path='/home' title="¿Quienes somos?" icon={IoPeople} />

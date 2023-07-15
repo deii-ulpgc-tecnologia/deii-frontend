@@ -4,7 +4,7 @@ interface Props {}
 
 function NewCard(props: Props) {
     return (
-        <div>New Card</div>
+        <div  style={{backgroundColor: "red"}}>New Card</div>
     )
 }
 

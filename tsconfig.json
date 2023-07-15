@@ -24,6 +24,7 @@
 			"@dcomponents/*": ["./src/dcomponents/*"],
 			"@utils/*": ["./src/utils/*"],
 			"@api/*": ["./src/api/*"],
+			"@assets/*": ["./src/assets/*"],
 			"@theme": ["./src/theme"]
 		}
 	},

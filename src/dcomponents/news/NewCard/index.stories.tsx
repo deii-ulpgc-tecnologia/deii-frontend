@@ -36,3 +36,19 @@ export const Default = {
 
 
 
+export const VeryLongTitle = {
+  args: {
+    columns: 4,
+    id: 0,
+    title: "Lorem ipsum dolor sit amet, consectetur asdfasdñfjadsklfjña kld adksjf adslj faslkd faskld fas fdj",
+    subtitle: " Minima alias earum expedita obcaecati culpa beatae vero distinctio optio delectus sequi perspiciatis aliquam maiores maxime, officia ea deserunt omnis, fugiat doloremque.",
+    created_at: new Date().toUTCString(),
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident praesentium reiciendis temporibus deleniti sequi! Placeat facilis voluptatum excepturi perferendis blanditiis aliquid. Laboriosam unde sed dolore corrupti voluptas voluptate? Consequatur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio neque aliquam quis veritatis dolore facilis error quo ullam provident eligendi sint beatae reprehenderit, quos voluptate maxime doloribus pariatur vero facere?",
+    tags: ['colegio', 'facultad', 'informatica'],
+    author: {
+      name: "Jose R. Peña Seco",
+      avatar: ""
+    },
+
+  },
+};

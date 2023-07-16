@@ -38,7 +38,7 @@ export default function HeaderLink({ title, children, popoverWidth = 350, cols =
 	return (
 		<Popover placement="bottom-start" isLazy={false} trigger='hover' openDelay={0}>
 			<PopoverTrigger>
-				<Box as={Link} replace href={path} display="flex" alignItems="center" gap="1" cursor="pointer" userSelect='none'>
+				<Box as={Link} prefetch={false} replace href={path} display="flex" alignItems="center" gap="1" cursor="pointer" userSelect='none'>
 					<Text color={textColor} fontWeight="bold">
 						{title}
 					</Text>

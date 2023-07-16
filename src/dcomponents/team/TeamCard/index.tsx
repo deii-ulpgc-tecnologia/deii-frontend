@@ -9,5 +9,5 @@ interface Props {
 }
 
 export default function TeamCard({obj}: Props) {
-    return <Box></Box>
+    return <Box>{obj.name}</Box>
 }

@@ -48,10 +48,9 @@ export default function HeaderLink({ title, children, popoverWidth = 350, cols =
 			{children && (
 				<Portal >
 					<PopoverContent w={popoverWidth} mt='2'  boxShadow='none !important' borderColor='gray.200' borderWidth='2' borderRadius='lg' shadow='lg-soft !important' padding='3' outline='0px'>
-						
-						<SimpleGrid columns={cols} gap='3'>
-						{children}
-</SimpleGrid>
+							<SimpleGrid columns={cols} gap='3'>
+							{children}
+							</SimpleGrid>
 						</PopoverContent>
 				</Portal>
 			)}

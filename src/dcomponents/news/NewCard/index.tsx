@@ -1,10 +1,14 @@
 import React from 'react'
+import { New } from '../../../types/db/new'
+import { Box } from '@chakra-ui/react'
 
-interface Props {}
+interface Props {
+    obj : New
+}
 
-function NewCard(props: Props) {
+function NewCard({ obj }: Props) {
     return (
-        <div  style={{backgroundColor: "red"}}>New Card</div>
+        <Box></Box>
     )
 }
 

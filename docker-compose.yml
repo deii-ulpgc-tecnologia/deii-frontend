@@ -1,8 +1,6 @@
 services:
   dev:
-    build:
-      context: .
-      dockerfile: dockerfile-app-dev
+    image: deiiulpgc/deii-frontend:app-dev
     container_name: front_cont
 
     working_dir: /frontend
@@ -19,9 +17,7 @@ services:
       - SERVER_PORT=8080
   
   storybook:
-    build:
-      context: .
-      dockerfile: dockerfile-app-dev
+    image: deiiulpgc/deii-frontend:app-dev
     container_name: storybook_cont
 
     working_dir: /frontend
@@ -36,8 +32,7 @@ services:
 
     
   pocketbase:
-    build:
-      dockerfile: dockerfile-pb-dev
+    image: deiiulpgc/deii-frontend:pocketbase
     container_name: pb-cont
     restart: unless-stopped
     #volumes:

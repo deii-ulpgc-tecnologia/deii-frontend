@@ -1,0 +1,15 @@
+FROM alpine:3 as base
+
+WORKDIR /pocketbase
+
+RUN mkdir ./pb_data
+
+RUN mkdir ./pb_migrations
+
+COPY dev-db/pb_data/. ./pb_data/
+
+COPY dev-db/pb_migrations/. ./pb_migrations/
+
+COPY dev-db/pocketbase .
+
+EXPOSE 8090

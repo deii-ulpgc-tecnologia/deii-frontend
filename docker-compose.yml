@@ -45,8 +45,8 @@ services:
     working_dir: /pocketbase
 
     ports:
-      - 8000:8000
+      - 8090:8090
     
-    command: ./pocketbase serve --http="0.0.0.0:8000" --dir="/pb-data"
+    command: ./pocketbase serve --http="0.0.0.0:8090"
 
     

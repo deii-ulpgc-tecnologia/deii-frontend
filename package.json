@@ -1,53 +1,65 @@
 {
-  "name": "deii-frontend",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "dependencies": {
-    "@chakra-ui/next-js": "^2.1.4",
-    "@chakra-ui/react": "^2.7.1",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@hypertheme-editor/chakra-ui": "^0.1.6-rc.0",
-    "@types/node": "20.4.2",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.44.0",
-    "eslint-config-next": "13.4.10",
-    "formik": "^2.4.2",
-    "framer-motion": "^10.12.21",
-    "next": "13.4.10",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.10.1",
-    "storybook-addon-pseudo-states": "^2.1.0",
-    "typescript": "5.1.6"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.22.9",
-    "@babel/preset-env": "^7.22.9",
-    "@chakra-ui/storybook-addon": "^5.0.0",
-    "@jest/globals": "^29.6.1",
-    "@storybook/addon-essentials": "^7.0.27",
-    "@storybook/addon-interactions": "^7.0.27",
-    "@storybook/addon-links": "^7.0.27",
-    "@storybook/blocks": "^7.0.27",
-    "@storybook/nextjs": "^7.0.27",
-    "@storybook/react": "^7.0.27",
-    "@storybook/testing-library": "^0.0.14-next.2",
-    "@types/jest": "^29.5.3",
-    "babel-jest": "^29.6.1",
-    "cypress": "^12.17.1",
-    "eslint-plugin-storybook": "^0.6.12",
-    "jest": "^29.6.1",
-    "storybook": "^7.0.27",
-    "ts-jest": "^29.1.1"
-  }
+    "name": "deii-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "lint-staged": {
+        "*.(ts|tsx)": [
+            "npm run lint",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "dependencies": {
+        "@chakra-ui/next-js": "^2.1.4",
+        "@chakra-ui/react": "^2.7.1",
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@hypertheme-editor/chakra-ui": "^0.1.6-rc.0",
+        "@types/node": "20.4.2",
+        "@types/react": "18.2.15",
+        "@types/react-dom": "18.2.7",
+        "eslint": "8.44.0",
+        "eslint-config-next": "13.4.10",
+        "formik": "^2.4.2",
+        "framer-motion": "^10.12.21",
+        "next": "13.4.10",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-icons": "^4.10.1",
+        "storybook-addon-pseudo-states": "^2.1.0",
+        "typescript": "5.1.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.22.9",
+        "@babel/preset-env": "^7.22.9",
+        "@chakra-ui/storybook-addon": "^5.0.0",
+        "@jest/globals": "^29.6.1",
+        "@storybook/addon-essentials": "^7.0.27",
+        "@storybook/addon-interactions": "^7.0.27",
+        "@storybook/addon-links": "^7.0.27",
+        "@storybook/blocks": "^7.0.27",
+        "@storybook/nextjs": "^7.0.27",
+        "@storybook/react": "^7.0.27",
+        "@storybook/testing-library": "^0.0.14-next.2",
+        "@types/jest": "^29.5.3",
+        "babel-jest": "^29.6.1",
+        "cypress": "^12.17.1",
+        "eslint-plugin-storybook": "^0.6.12",
+        "husky": "^8.0.3",
+        "jest": "^29.6.1",
+        "storybook": "^7.0.27",
+        "ts-jest": "^29.1.1"
+    }
 }

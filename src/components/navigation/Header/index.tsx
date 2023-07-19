@@ -7,7 +7,7 @@ import HeaderLinkOption from "./components/HeaderLinkOption"
 import { IoPeople, IoGitBranch, IoEarth, IoCashOutline, IoReceiptSharp, IoCalendar, IoRibbonSharp, IoSchool } from "react-icons/io5"
 import { MdSwitchAccount } from "react-icons/md"
 import Image from 'next/image'
-import logo from '@assets/logo.png'
+import logo from '../../../assets/logo.png'
 
 export default function Header() {
 	return (

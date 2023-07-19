@@ -1,12 +1,14 @@
 import { HTMLField } from "../fields/HTMLField";
 import { URLField } from "../fields/URLField";
+import { Delegate } from "./delegate";
 import { PocketBaseModel, TagModel } from "./generics";
 
-export interface NewTag extends TagModel{}
+export interface NewsTag extends TagModel{}
 
-export interface New extends PocketBaseModel{
+export interface News extends PocketBaseModel{
     title : string,
     thumbnail: URLField,
     content : HTMLField,
-    tags : NewTag[]
+    tags : NewsTag[], 
+    author: Delegate
 }

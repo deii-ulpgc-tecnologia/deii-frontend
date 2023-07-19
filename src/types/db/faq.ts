@@ -1,12 +1,14 @@
 import { HTMLField } from "../fields/HTMLField";
+import { URLField } from "../fields/URLField";
 import { PocketBaseModel, TagModel } from "./generics";
 
-export interface FAQTag extends TagModel{
-    icon : string
+export interface FaqTag extends TagModel{
+    icon : URLField,
+    description : string
 }
 
-export interface FAQ extends PocketBaseModel{
+export interface Faq extends PocketBaseModel{
     question : string,
     answer : HTMLField
-    tags: FAQTag[]
+    tags: FaqTag[]
 }

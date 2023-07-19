@@ -1,15 +1,15 @@
 import React from 'react'
-import { New } from '../../../types/db/new'
+import { FaqTag } from '../../../types/db/faq'
 import { Box } from '@chakra-ui/react'
 
 interface Props {
-    obj : New
+    obj : FaqTag
 }
 
-function NewCard({ obj }: Props) {
+function FaqTagCard({obj}: Props) {
     return (
         <Box></Box>
     )
 }
 
-export default NewCard
+export default FaqTagCard

@@ -1,7 +1,7 @@
-import { Delegate } from "./delegate";
-import { FAQ, FAQTag } from "./faq";
+import { Delegate, SocialNetwork } from "./delegate";
+import { Faq, FaqTag } from "./faq";
 import { PocketBaseModel, TagModel } from "./generics";
-import { New, NewTag } from "./new";
+import { News, NewsTag } from "./new";
 
 export const PocketBaseModelDummy : PocketBaseModel = {
     "id": "RECORD_ID",
@@ -17,6 +17,15 @@ export const TagModelDummy : TagModel = {
     color: "red",
 }
 
+export const SocialNetworkDummy: SocialNetwork = {
+    ...PocketBaseModelDummy,
+    network: {
+        icon: "AiFillInstagram",
+        name: "instagram"
+    },
+    url: "https://youtu.be/dQw4w9WgXcQ"
+}
+
 export const DelegateDummy : Delegate = {
     ...PocketBaseModelDummy,
     name: "Ruben Santana",
@@ -24,37 +33,41 @@ export const DelegateDummy : Delegate = {
     rol : "Delegado",
     belongsPresidency: true,
     isHonorary: true,
+    socialNetworks: [SocialNetworkDummy]
 }
 
-export const NewTagDummy: NewTag = {
+export const NewsTagDummy: NewsTag = {
     ...TagModelDummy,
 }
 
-export const NewDummy: New = {
+export const NewsDummy: News = {
     ...PocketBaseModelDummy,
     title: "Dummy title",
     thumbnail: "Dummy title",
     content: "<p>Dummy content</p>",
+    author: DelegateDummy,
     tags: [
-        NewTagDummy,
-        NewTagDummy,
-        NewTagDummy,
+        NewsTagDummy,
+        NewsTagDummy,
+        NewsTagDummy,
     ]
 }
 
 
-export const FAQTagDummy: FAQTag = {
+export const FaqTagDummy: FaqTag = {
     ...TagModelDummy,
-    icon: "Dummy URL"
+    icon: "Dummy URL",
+    description: "This is a description about this FAQ tag that will help our\
+    users find useful information."
 }
 
-export const FAQDummy: FAQ = {
+export const FAQDummy: Faq = {
     ...PocketBaseModelDummy,
     question: "Dummy question",
     answer: "Dummy answer",
     tags: [
-        FAQTagDummy,
-        FAQTagDummy,
-        FAQTagDummy
+        FaqTagDummy,
+        FaqTagDummy,
+        FaqTagDummy
     ],
 }

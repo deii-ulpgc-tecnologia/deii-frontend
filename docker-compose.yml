@@ -1,15 +1,52 @@
 services:
-  app:
-    image: deiiulpgc/deii-frontend:base
-    container_name: front_container
-    ports:
-      - 3000:3000
+  dev:
+    build:
+      context: .
+      dockerfile: dockerfile-app-dev
+    container_name: front_cont
+
     working_dir: /frontend
     volumes:
-      - ./pages:/frontend/pages
-      - ./styles:/frontend/styles
+      - ./src:/frontend/src
       - ./public:/frontend/public
 
+    ports:
+      - 3000:3000
+    
+    command: npm run dev
+    
     environment:
       - SERVER_PORT=8080
+  
+  storybook:
+    build:
+      context: .
+      dockerfile: dockerfile-app-dev
+    container_name: storybook_cont
+
+    working_dir: /frontend
+    volumes:
+      - ./src:/frontend/src
+      - ./public:/frontend/public
+
+    ports:
+      - 8008:8008
+    
+    command: npm run storybook
+
+    
+  pocketbase:
+    build:
+      dockerfile: dockerfile-pb-dev
+    container_name: pb-cont
+    restart: unless-stopped
+    #volumes:
+
+    working_dir: /pocketbase
+
+    ports:
+      - 8000:8000
+    
+    command: ./pocketbase serve --http="0.0.0.0:8000" --dir="/pb-data"
+
     

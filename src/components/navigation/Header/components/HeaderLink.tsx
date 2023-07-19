@@ -38,7 +38,7 @@ export default function HeaderLink({ title, children, popoverWidth = 350, cols =
 	return (
 		<Popover placement="bottom-start" isLazy={false} trigger='hover' openDelay={0}>
 			<PopoverTrigger>
-				<Box as={Link} replace href={path} display="flex" alignItems="center" gap="1" cursor="pointer" userSelect='none'>
+				<Box as={Link} prefetch={false} replace href={path} display="flex" alignItems="center" gap="1" cursor="pointer" userSelect='none'>
 					<Text color={textColor} fontWeight="bold">
 						{title}
 					</Text>
@@ -48,10 +48,9 @@ export default function HeaderLink({ title, children, popoverWidth = 350, cols =
 			{children && (
 				<Portal >
 					<PopoverContent w={popoverWidth} mt='2'  boxShadow='none !important' borderColor='gray.200' borderWidth='2' borderRadius='lg' shadow='lg-soft !important' padding='3' outline='0px'>
-						
-						<SimpleGrid columns={cols} gap='3'>
-						{children}
-</SimpleGrid>
+							<SimpleGrid columns={cols} gap='3'>
+							{children}
+							</SimpleGrid>
 						</PopoverContent>
 				</Portal>
 			)}

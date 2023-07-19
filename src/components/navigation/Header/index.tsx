@@ -11,9 +11,9 @@ import logo from '../../../assets/logo.png'
 
 export default function Header() {
 	return (
-		<Box shadow='lg-soft' w="100%" bgColor="white" position="sticky" px="5" py="5" display="flex" justifyContent="space-between" alignItems="center">
-			<Box><Image width={130} alt='pepe' src={logo}></Image></Box>
+		<Box shadow='lg-soft' w="100%" bgColor="white" position="fixed" px="5" py="5" display="flex" justifyContent="space-between" alignItems="center">
 			<Box display="flex" gap="16">
+				<Image width={110} alt='pepe' src={logo}></Image>
 				<HeaderLink title="Delegacion" path='/home'>
 					<HeaderLinkOption path='/home' title="¿Quienes somos?" icon={IoPeople} />
 					<HeaderLinkOption path='/home' title="Nuestros servicios" icon={IoGitBranch} />
@@ -31,7 +31,7 @@ export default function Header() {
 				<HeaderLink title="Guía de supervivencia" path='/survivalGuide'/>
 				<HeaderLink title="FAQs" path='/faqs' />
 			</Box>
-			<Button colorScheme="secondary" fontWeight="semibold">
+			<Button colorScheme="secondary" variant='solid' fontWeight="semibold">
 				Tengo un problema
 			</Button>
 		</Box>

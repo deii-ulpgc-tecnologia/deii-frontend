@@ -1,10 +1,14 @@
 import React from 'react'
+import { FAQ } from '../../../types/db/faq'
+import { Box } from '@chakra-ui/react'
 
-interface Props {}
+interface Props {
+    obj : FAQ
+}
 
-function FaqCard(props: Props) {
+function FaqCard({obj}: Props) {
     return (
-        <div>faq card</div>
+        <Box></Box>
     )
 }
 

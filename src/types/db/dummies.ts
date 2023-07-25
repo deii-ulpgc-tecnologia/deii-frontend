@@ -29,7 +29,7 @@ export const SocialNetworkDummy: SocialNetwork = {
 export const DelegateDummy : Delegate = {
     ...PocketBaseModelDummy,
     name: "Ruben Santana",
-    avatar : "icon",
+    avatar : "https://img.ecartelera.com/noticias/71900/71983-c.jpg",
     rol : "Delegado",
     belongsPresidency: true,
     isHonorary: true,
@@ -43,7 +43,7 @@ export const NewsTagDummy: NewsTag = {
 export const NewsDummy: News = {
     ...PocketBaseModelDummy,
     title: "Dummy title",
-    thumbnail: "Dummy title",
+    thumbnail: "https://img.freepik.com/foto-gratis/perrito-joven-posando-alegre_155003-28765.jpg",
     content: "<p>Dummy content</p>",
     author: DelegateDummy,
     tags: [

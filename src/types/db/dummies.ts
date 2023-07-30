@@ -28,12 +28,12 @@ export const SocialNetworkDummy: SocialNetwork = {
 
 export const DelegateDummy : Delegate = {
     ...PocketBaseModelDummy,
-    name: "Ruben Santana",
+    name: "Dummy Name",
     avatar : "icon",
     rol : "Delegado",
     belongsPresidency: true,
     isHonorary: true,
-    socialNetworks: [SocialNetworkDummy]
+    socialNetworks: [SocialNetworkDummy, SocialNetworkDummy]
 }
 
 export const NewsTagDummy: NewsTag = {
@@ -61,7 +61,7 @@ export const FaqTagDummy: FaqTag = {
     users find useful information."
 }
 
-export const FAQDummy: Faq = {
+export const FaqDummy: Faq = {
     ...PocketBaseModelDummy,
     question: "Dummy question",
     answer: "Dummy answer",

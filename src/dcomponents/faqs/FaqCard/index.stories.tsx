@@ -1,35 +1,27 @@
 import FaqCard from './index';
+import { Meta, StoryObj } from '@storybook/react';
+import { FaqDummy } from '../../../types/db/dummies';
 
-export default {
-  component: FaqCard,
-  title: 'Webpage/FAQs/FaqCard',
-  tags: ['autodocs'],
+const meta: Meta<typeof FaqCard> = {
+    component: FaqCard,
+    title: 'Webpage/Faqs/FaqCard',
+    tags: ['autodocs'],
 };
 
-export const Default = {
-  args: {
-    task: {
-      id: '1',
-      title: 'Test Task',
-      state: 'TASK_INBOX',
-    },
-  },
+export default meta;
+
+type Story = StoryObj<typeof FaqCard>
+
+export const Primary: Story = {
+    args: {
+        obj: FaqDummy,
+        open: false
+    } 
 };
 
-export const Pinned = {
-  args: {
-    task: {
-      ...Default.args.task,
-      state: 'TASK_PINNED',
-    },
-  },
-};
-
-export const Archived = {
-  args: {
-    task: {
-      ...Default.args.task,
-      state: 'TASK_ARCHIVED',
-    },
-  },
+export const Open: Story = {
+    args: {
+        obj: FaqDummy,
+        open: true
+    } 
 };

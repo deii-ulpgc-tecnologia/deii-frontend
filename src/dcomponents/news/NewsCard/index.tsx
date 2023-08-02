@@ -1,74 +1,46 @@
 import React, { useState } from 'react'
 import { News } from '../../../types/db/new'
-import { Heading, Card, CardBody, Text, CardFooter, Image, Stack, Divider, Avatar, Badge } from '@chakra-ui/react'
+import { Heading, Card, CardBody, Text, CardFooter, Image, Stack, Avatar, Badge, VStack } from '@chakra-ui/react'
 
 interface Props {
     obj : News
 }
 
 function NewsCard({ obj }: Props) {
-    // const [isHover, setIsHover] = useState(false)
-    // const badgeItems = obj.tags((tag) => <Badge>{tag}</Badge>)
 
-    return (
-        // <Box onMouseOver={() => setIsHover(true)}
-        //      onMouseOut={() => setIsHover(false)}>
-        // </Box>
-        
-    <Card padding={'0.70em'} borderRadius={'20px'}>
-        <Image src={obj.thumbnail} alt={obj.title} borderRadius={'20px'}/>
-        <CardBody px={'4vw'}>
-            <Stack direction={'row'}>   
-                {/* TODO: Buscar la forma de recorrer los tags que son de tipo NewsTag.
-                          Aplicarle el estilo de la tag.*/}
-                {
-                    obj.tags.map(tag => (
-                        <Badge colorScheme={tag.color} borderRadius={'5px'} px={'2vw'} py={'0.5vh'} fontSize={'0.7em'}>
-                            {tag.name}
-                        </Badge>
-                    ))  
-                }
+    return (   
+    <Card p={'1em'} borderRadius={'1.5em'} boxShadow={'base'} w={'40em'} h={'45em'}>
+        <Image src={obj.thumbnail} alt={obj.title} borderRadius={'1.5em'} h={'25em'}/>
+        <CardBody px={'1.5em'}>
+            <Stack direction={'row'} my={'0.5em'} >
+                {obj.tags.map(tag => (
+                    <Badge colorScheme={tag.color} borderRadius={'0.5em'} px={'1.5em'} py={'0.3em'} fontSize={'1em'} mr={'0.5em'}>
+                        {tag.name}
+                    </Badge>
+                ))}
             </Stack>
-            <Heading py={'1%'}>
+            <Heading mt={'0.8em'} fontSize={'2.5em'}>
                 {obj.title}
             </Heading>
         </CardBody>
-        <CardFooter display={'flex'} flexDirection={'row'} alignContent={'space-between'}>
-            <Avatar
-                src={obj.author.avatar}
-                name={obj.author.name}
-                borderRadius='100%'
-                margin='1vh 1vw 1vh 1vw'
-                boxSize='2em'
-            />
-            <Stack display={'flex'} flexDirection={'column'} px={'2vw'}>
-                <Text
-                    fontSize='0.9em'
-                    fontWeight={'bold'}
-                    position={'absolute'}
-                    padding={'1vh 0vw 0vh 0vw'}
-                    zIndex={1}
-                >
+        <CardFooter display={'flex'} flexDirection={'row'} mb={'0.5em'}>
+            <Avatar src={obj.author.avatar} name={obj.author.name} borderRadius={'100%'} boxSize={'3em'}/>
+            <VStack px={'1.2em'} spacing={'0em'}>
+                <Text fontSize={'1.2em'} fontWeight={'bold'} pt={'0.2em'}>
                     {obj.author.name}
                 </Text>
-                    {obj.author.isHonorary &&
-                        <Text
-                            fontSize='0.7em'
-                            position={'absolute'}
-                            padding={'4vh 0vw 0vh 0vw'}
-                            zIndex={2}
-                            color={'light-gray'}
-                        >
-                            Delegado honorífico
-                        </Text>
-                    }
-            </Stack>
-            <Text >
-                {new Date(obj.created).toDateString()}
+                {obj.author.isHonorary &&
+                    <Text fontSize={'1em'} color={'gray'}>
+                        Delegado honorífico
+                    </Text>
+                }
+            </VStack>
+            <Text pt={'0.2em'} color={'gray'} fontSize={'1.4em'} ml={'auto'} pr={'0.3em'}>
+                2 days ago
+                {/* {new Date(obj.created).toDateString()} */}
             </Text>
         </CardFooter>
     </Card>
-
     )
 }
 

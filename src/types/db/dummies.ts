@@ -50,6 +50,8 @@ export const NewsDummy: News = {
         NewsTagDummy,
         NewsTagDummy,
         NewsTagDummy,
+        NewsTagDummy,
+        NewsTagDummy,
     ]
 }
 

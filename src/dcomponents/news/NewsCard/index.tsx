@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { News } from '../../../types/db/new'
-import { Heading, Card, CardBody, Text, CardFooter, Image, Stack, Avatar, Badge, VStack } from '@chakra-ui/react'
+import { Heading, Card, CardBody, Text, CardFooter, Image, Stack, Avatar, Badge, VStack} from '@chakra-ui/react'
 import moment from 'moment'
+import Link from "next/link"
 
 interface Props {
     obj : News
@@ -9,8 +10,8 @@ interface Props {
 
 function NewsCard({ obj }: Props) {
 
-    return (   
-    <Card p={'1em'} borderRadius={'1.5em'} boxShadow={'base'} w={'40em'} minH={'fit-content'}>
+    return (
+    <Card p={'1em'} borderRadius={'1.5em'} boxShadow={'base'} w={'40em'} minH={'fit-content'} as={Link} prefetch={false} replace href={`/news/${obj.id}`}>
         <Image src={obj.thumbnail} alt={obj.title} borderRadius={'1.5em'} h={'25em'}/>
         <CardBody px={'1.5em'}>
             <Stack direction={'row'} my={'0.5em'} minH={'fit-content'} wrap={'wrap'} >

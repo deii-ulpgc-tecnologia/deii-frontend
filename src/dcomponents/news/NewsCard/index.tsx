@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { News } from '../../../types/db/new'
 import { Heading, Card, CardBody, Text, CardFooter, Image, Stack, Avatar, Badge, VStack } from '@chakra-ui/react'
-// import { moment } from 'moment'
+import moment from 'moment'
 
 interface Props {
     obj : News
@@ -27,7 +27,7 @@ function NewsCard({ obj }: Props) {
         <CardFooter display={'flex'} flexDirection={'row'} mb={'0.5em'}>
             <Avatar src={obj.author.avatar} name={obj.author.name} borderRadius={'100%'} boxSize={'3em'}/>
             <VStack px={'1.2em'} spacing={'0em'}>
-                <Text fontSize={'1.2em'} fontWeight={'bold'} pt={'0.2em'}>
+                <Text fontSize={'1.2em'} fontWeight={'bold'} pt={'0.2em'} mr={'auto'}>
                     {obj.author.name}
                 </Text>
                 {obj.author.isHonorary &&
@@ -37,8 +37,7 @@ function NewsCard({ obj }: Props) {
                 }
             </VStack>
             <Text pt={'0.2em'} color={'gray'} fontSize={'1.4em'} ml={'auto'} pr={'0.3em'} pl={'2em'} minW={'fit-content'}>
-                {/* {moment().startOf('day').fromNow()} */}
-                {new Date(obj.created).toDateString()}
+                {moment(obj.created).locale("es").fromNow()}
             </Text>
         </CardFooter>
     </Card>

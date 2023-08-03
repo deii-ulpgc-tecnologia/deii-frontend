@@ -30,11 +30,9 @@ function NewsCard({ obj }: Props) {
                 <Text fontSize={'1.2em'} fontWeight={'bold'} pt={'0.2em'} mr={'auto'}>
                     {obj.author.name}
                 </Text>
-                {obj.author.isHonorary &&
-                    <Text fontSize={'1em'} color={'gray'} mr={'auto'} flexWrap={'wrap'}>
-                        Delegado honorífico
-                    </Text>
-                }
+                <Text fontSize="1em" color="gray" mr="auto" flexWrap="wrap">
+                    {obj.author.isHonorary ? "Delegado honorífico" : obj.author.rol}
+                </Text>
             </VStack>
             <Text pt={'0.2em'} color={'gray'} fontSize={'1.4em'} ml={'auto'} pr={'0.3em'} pl={'2em'} minW={'fit-content'}>
                 {moment(obj.created).locale("es").fromNow()}

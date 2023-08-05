@@ -1,47 +1,92 @@
 import React, { useState } from 'react'
 import { News } from '../../../types/db/new'
-import { Heading, Card, CardBody, Text, CardFooter, Image, Stack, Avatar, Badge, VStack} from '@chakra-ui/react'
+import { Heading, Card, CardBody, Text, CardFooter, Image, Stack, Avatar, Badge,
+         VStack, CardHeader } from '@chakra-ui/react'
 import moment from 'moment'
 import Link from "next/link"
 
 interface Props {
-    obj : News
+    obj: News
 }
 
 function NewsCard({ obj }: Props) {
 
     return (
-    <Card p={'1em'} borderRadius={'1.5em'} boxShadow={'base'} w={'40em'} minH={'fit-content'} as={Link} prefetch={false} replace href={`/news/${obj.id}`}>
-        <Image src={obj.thumbnail} alt={obj.title} borderRadius={'1.5em'} h={'25em'}/>
-        <CardBody px={'1.5em'}>
-            <Stack direction={'row'} my={'0.5em'} minH={'fit-content'} wrap={'wrap'} >
-                {obj.tags.map(tag => (
-                    <Badge colorScheme={tag.color} borderRadius={'0.5em'} px={'1.5em'} py={'0.3em'} fontSize={'1em'} mr={'0.5em'}>
-                        {tag.name}
-                    </Badge>
-                ))}
-            </Stack>
-            <Heading mt={'0.8em'} fontSize={'2.5em'}>
-                {obj.title}
-            </Heading>
-        </CardBody>
-        <CardFooter display={'flex'} flexDirection={'row'} mb={'0.5em'}>
-            <Avatar src={obj.author.avatar} name={obj.author.name} borderRadius={'100%'} boxSize={'3em'}/>
-            <VStack px={'1.2em'} spacing={'0em'}>
-                <Text fontSize={'1.2em'} fontWeight={'bold'} pt={'0.2em'} mr={'auto'}>
-                    {obj.author.name}
+        <Card
+            align={'flex-start'}
+            direction={'column'}
+            justify={'flex-start'}
+            p={'.6rem'}
+            borderRadius={'1.2rem'}
+            boxShadow={'base'}
+            as={Link}
+            prefetch={false}
+            replace href={`/news/${obj.id}`}>
+            <CardHeader p={'0'} >
+                <Image
+                    src={obj.thumbnail}
+                    alt={obj.title}
+                    borderRadius={'1.2rem'}
+                    w={'100%'}/>
+            </CardHeader>
+            <CardBody p={'0'} px={'1rem'} pt={'1rem'}>
+                <Stack
+                    align={'flex-start'}
+                    direction={'row'}
+                    wrap={'wrap'} >
+                    {obj.tags.map(tag => (
+                        <Badge
+                        colorScheme={tag.color} 
+                        borderRadius={'.3rem'}
+                        px={'1rem'}
+                        py={'.2rem'}
+                        fontSize={'.7em'}
+                        mr={'.1rem'}>
+                            {tag.name}
+                        </Badge>
+                    ))}
+                </Stack>
+                <Heading mt={'.5rem'} fontSize={'1.8em'}>
+                    {obj.title}
+                </Heading>
+            </CardBody>
+            <CardFooter
+                display={'flex'} 
+                flexDirection={'row'} 
+                mb={'.5rem'}
+                w={'100%'}>
+                <Avatar 
+                    src={obj.author.avatar}
+                    name={obj.author.name}
+                    borderRadius={'100%'}
+                    boxSize={'2rem'}
+                    mt={'.5rem'}/>
+                <VStack pl={'1rem'} spacing={'0'} mr={'auto'} mt={'.5rem'}>
+                    <Text 
+                        fontSize={'.8em'}
+                        fontWeight={'bold'}>
+                        {obj.author.name}
+                    </Text>
+                    <Text
+                        fontSize={'.6em'}
+                        color={'gray'}
+                        flexWrap={'wrap'}>
+                        {obj.author.isHonorary? "Delegado honorífico" :
+                                                obj.author.rol}
+                    </Text>
+                </VStack>
+                <Text
+                    mt={'1.1rem'}
+                    color={'gray'}
+                    fontSize={'1em'}
+                    ml={'auto'}
+                    minW={'fit-content'}>
+                    {moment(obj.created).locale("es").fromNow()}
                 </Text>
-                <Text fontSize="1em" color="gray" mr="auto" flexWrap="wrap">
-                    {obj.author.isHonorary ? "Delegado honorífico" : obj.author.rol}
-                </Text>
-            </VStack>
-            <Text pt={'0.2em'} color={'gray'} fontSize={'1.4em'} ml={'auto'} pr={'0.3em'} pl={'2em'} minW={'fit-content'}>
-                {moment(obj.created).locale("es").fromNow()}
-            </Text>
-        </CardFooter>
-    </Card>
+            </CardFooter>
+        </Card>
     )
-    
+
 }
 
 export default NewsCard

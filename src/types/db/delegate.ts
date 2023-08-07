@@ -13,7 +13,7 @@ export interface SocialNetwork extends PocketBaseModel{
 export interface Delegate extends PocketBaseModel{
     name : string,
     avatar : URLField,
-    rol : string,
+    rol?: string,
     belongsPresidency : boolean,
     isHonorary: boolean,
     socialNetworks: SocialNetwork[]

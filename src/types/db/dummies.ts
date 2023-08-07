@@ -30,7 +30,7 @@ export const DelegateDummy : Delegate = {
     ...PocketBaseModelDummy,
     avatar : "https://img.ecartelera.com/noticias/71900/71983-c.jpg",
     name: "Dummy Name",
-    rol : "Delegado",
+    rol : "Delegado Honorario",
     belongsPresidency: true,
     isHonorary: true,
     socialNetworks: [SocialNetworkDummy, SocialNetworkDummy]

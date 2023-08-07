@@ -13,23 +13,24 @@ function NewsCard({ obj }: Props) {
 
     return (
         <Card
-            align={'flex-start'}
+            align={'center'}
             direction={'column'}
             justify={'flex-start'}
             p={'.6rem'}
             borderRadius={'1.2rem'}
             boxShadow={'base'}
+            w={'28rem'}
+            h={'32rem'}
             as={Link}
             prefetch={false}
             replace href={`/news/${obj.id}`}>
-            <CardHeader p={'0'} >
+            <CardHeader p={'0'} w={'100%'}>
                 <Image
                     src={obj.thumbnail}
                     alt={obj.title}
-                    borderRadius={'1.2rem'}
-                    w={'100%'}/>
+                    borderRadius={'1.2rem'}/>
             </CardHeader>
-            <CardBody p={'0'} px={'1rem'} pt={'1rem'}>
+            <CardBody p={'0'} px={'1rem'} pt={'1rem'} w={'100%'}>
                 <Stack
                     align={'flex-start'}
                     direction={'row'}
@@ -52,7 +53,7 @@ function NewsCard({ obj }: Props) {
             </CardBody>
             <CardFooter
                 display={'flex'} 
-                flexDirection={'row'} 
+                flexDirection={'row'}
                 mb={'.5rem'}
                 w={'100%'}>
                 <Avatar 
@@ -61,18 +62,19 @@ function NewsCard({ obj }: Props) {
                     borderRadius={'100%'}
                     boxSize={'2rem'}
                     mt={'.5rem'}/>
-                <VStack pl={'1rem'} spacing={'0'} mr={'auto'} mt={'.5rem'}>
+                <VStack pl={'1rem'} spacing={'0'} mt={'.5rem'}>
                     <Text 
                         fontSize={'.8em'}
-                        fontWeight={'bold'}>
+                        fontWeight={'bold'}
+                        mr={'auto'}>
                         {obj.author.name}
                     </Text>
                     <Text
                         fontSize={'.6em'}
                         color={'gray'}
-                        flexWrap={'wrap'}>
-                        {obj.author.isHonorary? "Delegado honorífico" :
-                                                obj.author.rol}
+                        flexWrap={'wrap'}
+                        mr={'auto'}>
+                        {obj.author.rol ?? ""}
                     </Text>
                 </VStack>
                 <Text

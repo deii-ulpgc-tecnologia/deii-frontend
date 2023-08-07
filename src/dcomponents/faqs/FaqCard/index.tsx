@@ -4,10 +4,9 @@ import { Box } from '@chakra-ui/react'
 
 interface Props {
     obj : Faq,
-    open: boolean
 }
 
-function FaqCard({obj, open}: Props) {
+function FaqCard({obj}: Props) {
     return (
         <Box></Box>
     )

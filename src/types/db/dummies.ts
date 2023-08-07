@@ -13,8 +13,8 @@ export const PocketBaseModelDummy : PocketBaseModel = {
 
 export const TagModelDummy : TagModel = {
     ...PocketBaseModelDummy,
-    name: "Dummy tag",
-    color: "red",
+    name: "Gamefest",
+    color: "blue",
 }
 
 export const SocialNetworkDummy: SocialNetwork = {
@@ -30,7 +30,7 @@ export const DelegateDummy : Delegate = {
     ...PocketBaseModelDummy,
     avatar : "https://img.ecartelera.com/noticias/71900/71983-c.jpg",
     name: "Dummy Name",
-    rol : "Delegado",
+    rol : "Delegado Honorario",
     belongsPresidency: true,
     isHonorary: true,
     socialNetworks: [SocialNetworkDummy, SocialNetworkDummy]

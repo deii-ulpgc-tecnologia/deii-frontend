@@ -1,8 +1,0 @@
-.rrss {
-    transition: all .4s ease-in-out;
-}
-
-a:hover>.rrss {
-    width: 40px;
-    height: 40px;
-}

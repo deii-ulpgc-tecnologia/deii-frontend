@@ -28,7 +28,7 @@ export const SocialNetworkDummy1: SocialNetwork = {
 export const SocialNetworkDummy2: SocialNetwork = {
     ...PocketBaseModelDummy,
     network: {
-        icon: "AiFillInstagram",
+        icon: "AiFillGithub",
         name: "GitHub"
     },
     url: "https://youtu.be/dQw4w9WgXcQ"
@@ -36,7 +36,7 @@ export const SocialNetworkDummy2: SocialNetwork = {
 export const SocialNetworkDummy3: SocialNetwork = {
     ...PocketBaseModelDummy,
     network: {
-        icon: "AiFillInstagram",
+        icon: "AiFillYoutube",
         name: "Youtube"
     },
     url: "https://youtu.be/dQw4w9WgXcQ"
@@ -47,7 +47,7 @@ export const DelegateDummy: Delegate = {
     avatar: "https://img.ecartelera.com/noticias/71900/71983-c.jpg",
     rol: "Delegado",
     belongsPresidency: true,
-    isHonorary: true,
+    isHonorary: false,
     socialNetworks: [SocialNetworkDummy1, SocialNetworkDummy2, SocialNetworkDummy3]
 }
 

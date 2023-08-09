@@ -13,8 +13,8 @@ export const PocketBaseModelDummy: PocketBaseModel = {
 
 export const TagModelDummy: TagModel = {
     ...PocketBaseModelDummy,
-    name: "Dummy tag",
-    color: "red",
+    name: "Gamefest",
+    color: "blue",
 }
 
 export const SocialNetworkDummy1: SocialNetwork = {

@@ -56,7 +56,7 @@ export const NewsDummy: News = {
 
 export const FaqTagDummy: FaqTag = {
     ...TagModelDummy,
-    icon: "Dummy URL",
+    icon: "https://cdn.icon-icons.com/icons2/537/PNG/512/paper-pencil_icon-icons.com_52928.png",
     description: "This is a description about this FAQ tag that will help our\
     users find useful information."
 }

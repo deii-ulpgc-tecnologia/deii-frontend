@@ -27,7 +27,7 @@ export default function TeamCard({ obj }: Props) {
             align={'center'}
             w={width}
             h={height}
-            borderRadius='25px'
+            borderRadius='15%'
             transition={'all .3s ease-in-out'}
             boxShadow='md'
             _hover={{

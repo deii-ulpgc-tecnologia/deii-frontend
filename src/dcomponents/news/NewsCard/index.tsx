@@ -37,6 +37,7 @@ function NewsCard({ obj }: Props) {
                     wrap={'wrap'} >
                     {obj.tags.map(tag => (
                         <Badge
+                        key={tag.name}
                         colorScheme={tag.color} 
                         borderRadius={'.3rem'}
                         px={'1rem'}

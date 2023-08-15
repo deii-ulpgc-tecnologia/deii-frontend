@@ -1,33 +1,69 @@
-"use client"
-
 import React from 'react'
 import { Delegate } from '../../../types/db/delegate'
-import { Box, Card, CardBody, Flex, Grid, Image, Text, Circle, Link, Icon } from '@chakra-ui/react'
-import DelegateIsHonorary from './components/DelegateIsHonorary';
+import DelegateAvatar from './components/DelegateAvatar';
 import DelegateSocialNetworks from './components/DelegateSocialNetworks';
+import {
+    Card,
+    CardBody,
+    CardHeader,
+    Flex,
+    Heading,
+    Stack,
+    Text
+} from '@chakra-ui/react'
+
 interface Props {
-    obj : Delegate
+    obj: Delegate
 }
 
-export default function TeamCard({obj}: Props) {
+export default function TeamCard({ obj }: Props) {
+
+    const width = obj.isHonorary ? '11rem' : '10rem'
+    const height = obj.isHonorary ? '13rem' : '11rem'
+
     return (
         /* A la hora de implementarlo puede que haya que cambiar la altura del componente a 100% */
-        <Card w={obj.isHonorary ? '350px' :'290px'} h={obj.isHonorary ? '385px' :'300px'} borderRadius='50px' boxShadow='0px 4px 65px 0px rgba(0, 0, 0, 0.1)' transition={'all .4s ease-in-out'}>
-            <CardBody>
-                <Grid justifyItems='center' alignItems= 'center' h='100%'>
-                    <Box position='relative'>
-                        <DelegateIsHonorary isHonorary={obj.isHonorary}></DelegateIsHonorary>
-                        <Image w={obj.isHonorary ? '200px' :'150px'} h={obj.isHonorary ? '200px' :'150px'} marginBottom='5' objectFit='cover' src={obj.avatar} alt={"Avatar de " + obj.name} borderRadius='50%'/> 
-                    </Box>
-                    <Grid justifyItems='center' alignItems= 'center'>
-                        <Text fontSize='lg' fontWeight='bolder'>{obj.name ? obj.name : ''}</Text>
-                        <Text fontSize='md' color='#6F6F6F'>{obj.rol ? obj.rol : ''}</Text>
-                    </Grid>
-                    <Flex marginTop='5' columnGap='5px' h='50'>
-                        <DelegateSocialNetworks socialNetworks={obj.socialNetworks} size={25} sizeHover={50}></DelegateSocialNetworks>
-                    </Flex>
-                </Grid>
+        <Card
+            align={'center'}
+            w={width}
+            h={height}
+            borderRadius='25px'
+            transition={'all .3s ease-in-out'}
+            boxShadow='md'
+            _hover={{
+                w: `calc(${width} + .5em)`,
+                h: `calc(${height} + .5em)`
+            }}>
+            <CardHeader
+                h={'60%'}
+                w={'100%'}
+                px={'1em'}
+                pb={0}
+                pt={'.5em'}>
+                <DelegateAvatar obj={obj} />
+            </CardHeader>
+            <CardBody
+                w={'100%'}
+                h={'40%'}
+                p={0}
+                px={'1em'}>
+                <Flex
+                    h={'100%'}
+                    pb={'.5em'}
+                    direction={'column'}
+                    align={'center'}
+                    justify={'space-between'}>
+                    <Stack align={'center'} spacing={'.2em'}>
+                        <Heading fontSize={'x-small'}>{obj.name}</Heading>
+                        <Text fontSize='xx-small' color='#6F6F6F'>
+                            {obj.rol ?? ''}
+                        </Text>
+                    </Stack>
+                    <DelegateSocialNetworks
+                        socialNetworks={obj.socialNetworks}
+                    />
+                </Flex>
             </CardBody>
-        </Card>
+        </Card >
     )
 }

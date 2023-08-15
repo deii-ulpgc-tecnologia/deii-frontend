@@ -1,43 +1,40 @@
-"use client"
-
 import React from 'react'
-import { Link, Icon } from '@chakra-ui/react'
+import { Link, Icon, Flex } from '@chakra-ui/react'
 import { SocialNetwork } from '../../../../../types/db/delegate';
 import { IconType } from 'react-icons';
-import { AiFillInstagram, AiFillFacebook, AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 import { BiSolidConversation } from "react-icons/bi"
+import {
+    AiFillInstagram,
+    AiFillFacebook,
+    AiFillGithub,
+    AiFillLinkedin
+} from "react-icons/ai"
 
 interface Props {
-    socialNetworks : SocialNetwork[],
-    size: number
-    sizeHover: number,
+    socialNetworks: SocialNetwork[],
 }
 
-export default function DelegateSocialNetworks({socialNetworks, size,sizeHover}: Props) {
-    /* Inserta las redes sociales que tenga el ususario dentro de la carta */
-    function addSocialNetwork(){
-        let showSocialNetworks:any[] = [];
-        if(socialNetworks.length > 0)
-            socialNetworks.forEach((sn) => {
-                let icon: IconType = stringToIconType(sn.network.icon);
-                showSocialNetworks.push(
-                    <Link href={sn.url} w={size} h={size} _hover={{ width:{sizeHover}, height:{sizeHover}}} isExternal cursor='pointer' textDecoration='none'>
-                        <Icon as={icon} w={size} h={size} transition={'all ease .4s'} _hover={{ width:{sizeHover}+'px', height:{sizeHover}+'px', fill:'#454545'}}></Icon>
-                    </Link>
-                )
-            })
-        return showSocialNetworks;
-    }
+const icons = new Map<string, IconType>([
+    ['AiFillInstagram', AiFillInstagram],
+    ['AiFillFacebook', AiFillFacebook],
+    ['AiFillGithub', AiFillGithub],
+    ['AiFillLinkedin', AiFillLinkedin]
+])
 
-    function stringToIconType(string: string): IconType{
-        switch(string){
-            case 'AiFillInstagram': return AiFillInstagram
-            case 'AiFillFacebook': return AiFillFacebook
-            case 'AiFillGithub': return AiFillGithub
-            case 'AiFillLinkedin': return AiFillLinkedin
-            default: return BiSolidConversation
-        }
-    }
-
-    return addSocialNetwork();
+export default function DelegateSocialNetworks({ socialNetworks }: Props) {
+    return (
+        <Flex
+            justify={'space-between'}
+            w={'45%'}>
+            {socialNetworks.map((sn) => (
+                <Link key={sn.network.name}>
+                    <Icon
+                        size={'md'}
+                        as={
+                            icons.get(sn.network.icon) ?? BiSolidConversation
+                        } />
+                </Link>
+            ))}
+        </Flex>
+    )
 }

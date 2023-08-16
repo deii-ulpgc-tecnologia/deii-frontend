@@ -23,13 +23,11 @@ import {
 export interface SearchParams {
     searchPhrase: string;
     category: TagModel;
-    tags: TagModel[]
 }
 
-type OptionalExcept<T, K extends keyof T> = Partial<Omit<T, K>> & Pick<T, K>
-
-interface Props extends OptionalExcept<SearchParams, 'tags'> {
+interface Props extends SearchParams {
     setSearchParams: (sp: SearchParams) => void;
+    tags: TagModel[]
 }
 
 export default function Filter({
@@ -41,7 +39,8 @@ export default function Filter({
 
     const formik = useFormik({
         initialValues: {
-            searchPhrase: searchPhrase ?? ''
+            searchPhrase: searchPhrase ?? '',
+            categories: category !== undefined ? [category] : []
         },
         onSubmit() { },
     })
@@ -57,8 +56,6 @@ export default function Filter({
             <InputRightElement w={'8.8rem'} >
                 <Divider h={'1.75rem'} orientation="vertical" />
                 <Menu
-                    preventOverflow={true}
-                    boundary={'scrollParent'}
                     closeOnSelect={false}>
                     <MenuButton as={Button} pl={'.5em'} mr={'0'}
                         w={'calc(100% - .2em)'}

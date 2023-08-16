@@ -14,18 +14,18 @@ export default function Header() {
         <Box shadow='lg-soft' w="100%" bgColor="white" position="fixed" px="5" py="5" display="flex" justifyContent="space-between" alignItems="center">
             <Flex gap="16">
                 <Image width={110} alt='Logo de la delegación' src={logo}></Image>
-                <HeaderLink title="Delegacion" path='/home'>
-                    <HeaderLinkOption path='/home' title="¿Quienes somos?" icon={IoPeople} />
+                <HeaderLink title="Delegación" path='/home'>
+                    <HeaderLinkOption path='/home' title="¿Quiénes somos?" icon={IoPeople} />
                     <HeaderLinkOption path='/home' title="Nuestros servicios" icon={IoGitBranch} />
                 </HeaderLink>
-                <HeaderLink title="Tramites" cols={2} popoverWidth={600} path='/processes'>
+                <HeaderLink title="Trámites" cols={2} popoverWidth={600} path='/processes'>
                     <HeaderLinkOption title="Movilidad" icon={IoEarth} path='/processes/mobility' />
                     <HeaderLinkOption title="Becas y ayudas" icon={IoCashOutline} path='/processes/scholarships/' />
-                    <HeaderLinkOption title="Tramites universitarios" icon={IoReceiptSharp} path='/processes/general/' />
-                    <HeaderLinkOption title="Plazos de interes" icon={IoCalendar} path='/processes/deadlines/' />
+                    <HeaderLinkOption title="Trámites universitarios" icon={IoReceiptSharp} path='/processes/general/' />
+                    <HeaderLinkOption title="Plazos de interés" icon={IoCalendar} path='/processes/deadlines/' />
                     <HeaderLinkOption title="Cambio de grupo" icon={MdSwitchAccount} path='/processes/groups/' />
-                    <HeaderLinkOption title="Reconocimiento de creditos" icon={IoRibbonSharp} path='/processes/ects/' />
-                    <HeaderLinkOption title="Matriculas" icon={IoSchool} path='/processes/enrollment/' />
+                    <HeaderLinkOption title="Reconocimiento de créditos" icon={IoRibbonSharp} path='/processes/ects/' />
+                    <HeaderLinkOption title="Matrículas" icon={IoSchool} path='/processes/enrollment/' />
                 </HeaderLink>
                 <HeaderLink title="Noticias" path='/news' />
                 <HeaderLink title="Guía de supervivencia" path='/survivalGuide' />

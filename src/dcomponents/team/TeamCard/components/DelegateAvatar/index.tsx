@@ -1,7 +1,7 @@
 import { AspectRatio, Avatar, Box, Center } from '@chakra-ui/react';
 import Image from 'next/image'
 import React from 'react'
-import honorificIcon from '/src/assets/honorific_delegate_icon.svg'
+import honorificIcon from '/public/images/honorific_delegate_icon.svg'
 import { Delegate } from '../../../../../types/db/delegate';
 
 interface Props {

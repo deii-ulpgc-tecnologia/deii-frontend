@@ -1,5 +1,5 @@
-import { UUIDField } from "@fields/UUIDField"
-import { DateField } from "@fields/DateField"
+import { DateField } from "fields/DateField";
+import { UUIDField } from "fields/UUIDField";
 
 export interface PocketBaseModel {
     id: UUIDField,
@@ -13,6 +13,3 @@ export interface TagModel extends PocketBaseModel {
     color: string,
     name: string
 }
-
-export type FilterableItem = { tags: TagModel[] }
-

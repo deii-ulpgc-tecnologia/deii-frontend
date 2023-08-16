@@ -23,6 +23,8 @@
 			"@components/*": ["./src/components/*"],
 			"@dcomponents/*": ["./src/dcomponents/*"],
 			"@utils/*": ["./src/utils/*"],
+			"@db/*": ["./src/types/db/*"],
+			"@fields/*": ["./src/types/fields/*"],
 			"@api/*": ["./src/api/*"],
 			"@theme": ["./src/theme"],
 		}
